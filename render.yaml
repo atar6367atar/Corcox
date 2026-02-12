@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: telegram-python-bot
+    env: python
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+    autoDeploy: true
+    plan: free
